@@ -1,0 +1,19 @@
+{
+  "name": "example-nodejs-setup-dev-env-for-multi-os",
+  "version": "0.0.1",
+  "description": "Example to set up nodejs development environment for multi os (Linux/Mac/Windows).",
+  "repository": "https://github.com/keidrun/example-nodejs-setup-dev-env-for-multi-os",
+  "author": "keidrun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3"
+  },
+  "scripts": {
+    "db:migrate": "cd ./database && db-migrate create initial",
+    "setup": "./run setup",
+    "shell": "./run shell",
+    "restart": "./run restart",
+    "destroy": "./run destroy"
+  }
+}

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - ./:/srv
+    command: /bin/bash /srv/ops/local/main.sh
+    extra_hosts:
+      - "web.dev:127.0.0.1"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
